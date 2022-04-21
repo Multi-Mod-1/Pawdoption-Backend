@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "seed": "node seed.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "express-basic-auth": "^1.2.1",
     "nodemon": "^2.0.15",
     "pg": "^8.7.3",
-    "sequelize": "^6.19.0"
+    "sequelize": "^6.19.0",
+    "sqlite3": "^5.0.4"
   }
 }
