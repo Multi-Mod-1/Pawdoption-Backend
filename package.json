@@ -4,13 +4,19 @@
   "description": "Multiverse project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Multi-Mod-1/Pawdoption-Backend.git"
   },
-  "author": "Javier Montero, CJ Garcia, Lucas Freitas, Eric Davenport",
+  "contributors": [
+    "Javier Montero",
+    "CJ Garcia",
+    "Lucas Freitas",
+    "Eric Davenport"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Multi-Mod-1/Pawdoption-Backend/issues"
