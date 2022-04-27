@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "firstName": "Don",
+      "lastName": "Julio",
+      "location": "Mars",
+      "password": "To the moon",
+      "username": "turtles"
+    },
+    {
+      "firstName": "Luffy",
+      "lastName": "Monkey",
+      "location": "Laugh Tales",
+      "password": "King of Pirates",
+      "username": "Ace"
+    }
+  ]
+}
