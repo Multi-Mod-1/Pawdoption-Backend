@@ -1,14 +1,16 @@
-const { db, DataTypes, Model } = require('../db')
+const {Sequelize, DataTypes, Model} = require("sequelize");
+const {db} = require("../db");
 
-class Location extends Model {
+class Location extends Model {}
 
-}
+Location.init(
+  {
+    state: DataTypes.STRING,
+  },
+  {
+    sequelize: db,
+    timestamps: false,
+  },
+);
 
-Location.init({
-  state: DataTypes.STRING
-}, {
-  sequelize: db,
-  timestamps: false
-})
-
-module.exports = Location
+module.exports = Location;
