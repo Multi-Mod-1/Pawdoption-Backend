@@ -5,8 +5,10 @@ const Location = require("./location");
 // Relationships here
 
 //Ex.
-// Dog.belongsTo(Location);
-// Location.hasMany(Dog);
+Dog.belongsTo(Location);
+Location.hasMany(Dog);
+Dog.belongsTo(User);
+User.hasMany(Dog);
 
 module.exports = {
   User,

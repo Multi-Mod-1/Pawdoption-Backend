@@ -8,7 +8,6 @@ Dog.init({
   sex: DataTypes.STRING, ///*
   age: DataTypes.NUMBER,
   breed: DataTypes.STRING, ///*
-  location: DataTypes.STRING, ///* 
   summary: DataTypes.STRING,
   description: DataTypes.STRING,
   imageUrl: DataTypes.STRING
