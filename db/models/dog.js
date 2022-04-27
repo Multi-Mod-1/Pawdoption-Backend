@@ -22,6 +22,26 @@ Dog.init(
   },
 );
 
+Dog.init({
+  name: DataTypes.STRING,
+  sex: DataTypes.STRING, ///*
+  age: DataTypes.INTEGER,
+  breed: DataTypes.STRING, ///*
+  summary: {
+    type: DataTypes.STRING,
+    defaultValue: "No summary added",
+    allowNull: true
+  },
+  description: {
+    type: DataTypes.STRING,
+    defaultValue: "No description added",
+    allowNull: true
+  },
+  imageUrl: DataTypes.STRING
+},{
+  sequelize: db,
+  timestamps: false
+})
 
 //* make these an enum? a seperate table?
 // for simplicity sake.. they are not for now.
