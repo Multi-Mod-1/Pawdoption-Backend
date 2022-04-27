@@ -5,7 +5,7 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 
 // These get imported from the index.js file in the models folder
-const {} = require("../db/models");
+const {User} = require("../db/models");
 module.exports = router;
 
 // Routes go here, but they begin with router instead of app
@@ -47,8 +47,11 @@ router.post("/", async (req, res) => {
       if (error) throw error;
       // Create a new user, storing the hashed password
       const newUser = await User.create({
-        name: req.body.name,
-        password: encrypted,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        location: req.body.location,
+        password: req.body.password,
+        username: req.body.username,
       });
       res.json({newUser});
     } catch (error) {
