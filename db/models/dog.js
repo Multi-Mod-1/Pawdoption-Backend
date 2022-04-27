@@ -22,6 +22,7 @@ Dog.init(
   },
 );
 
+
 //* make these an enum? a seperate table?
 // for simplicity sake.. they are not for now.
 
