@@ -1,0 +1,36 @@
+{
+  "name": "pawdoption-backend",
+  "version": "1.0.0",
+  "description": "Multiverse project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "seed": "node seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Multi-Mod-1/Pawdoption-Backend.git"
+  },
+  "contributors": [
+    "Javier Montero",
+    "CJ Garcia",
+    "Lucas Freitas",
+    "Eric Davenport"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Multi-Mod-1/Pawdoption-Backend/issues"
+  },
+  "homepage": "https://github.com/Multi-Mod-1/Pawdoption-Backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-basic-auth": "^1.2.1",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3",
+    "sequelize": "^6.19.0",
+    "sqlite3": "^5.0.4"
+  }
+}
