@@ -1,0 +1,58 @@
+{
+  "dogs" : [
+    {
+      "name": "Ace",
+      "sex": "M",
+      "age": 12,
+      "breed": "German Shepherd",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+    },
+    {
+      "name": "Gene",
+      "sex": "F",
+      "age": 6,
+      "breed": "German Shepherd",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+    },
+    {
+      "name": "Spyce",
+      "sex": "F",
+      "age": 10,
+      "breed": "German Shepherd",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+    },
+    {
+      "name": "Regal",
+      "sex": "M",
+      "age": 24,
+      "breed": "Dalmatian",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+    },
+    {
+      "name": "Spike",
+      "sex": "M",
+      "age": 3,
+      "breed": "Poodle",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+    },
+    {
+      "name": "Jimmy",
+      "sex": "M",
+      "age": 0,
+      "breed": "Pitbull",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+    }
+  ]
+}
