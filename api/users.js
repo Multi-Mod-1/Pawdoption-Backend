@@ -50,7 +50,7 @@ router.post("/", async (req, res) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         location: req.body.location,
-        password: req.body.password,
+        password: encrypted,
         username: req.body.username,
       });
       res.json({newUser});
