@@ -1,10 +1,10 @@
-const User = require("./user");
-const Dog = require("./dog");
-const Location = require("./location");
+const User = require('./user');
+const Dog = require('./dog');
+const Location = require('./location');
 
 // Relationships here
 
-//Ex.
+// Ex.
 Dog.belongsTo(Location);
 Location.hasMany(Dog);
 Dog.belongsTo(User);

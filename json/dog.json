@@ -7,7 +7,9 @@
       "breed": "German Shepherd",
       "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
-      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "LocationId": 1,
+      "UserId": 1
     },
     {
       "name": "Gene",
@@ -16,7 +18,9 @@
       "breed": "German Shepherd",
       "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
-      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "LocationId": 1,
+      "UserId": 1
     },
     {
       "name": "Spyce",
@@ -25,7 +29,9 @@
       "breed": "German Shepherd",
       "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
-      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "LocationId": 1,
+      "UserId": 1
     },
     {
       "name": "Regal",
@@ -34,7 +40,9 @@
       "breed": "Dalmatian",
       "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
-      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "LocationId": 1,
+      "UserId": 1
     },
     {
       "name": "Spike",
@@ -43,7 +51,9 @@
       "breed": "Poodle",
       "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
-      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "LocationId": 1,
+      "UserId": 1
     },
     {
       "name": "Jimmy",
@@ -52,7 +62,9 @@
       "breed": "Pitbull",
       "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
-      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere."
+      "imageURL": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus in mollis nunc sed id. Fames ac turpis egestas maecenas pharetra convallis posuere.",
+      "LocationId": 1,
+      "UserId": 1
     }
   ]
 }
