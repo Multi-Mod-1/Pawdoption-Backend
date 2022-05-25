@@ -5,7 +5,7 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 
 // These get imported from the index.js file in the models folder
-const {Dog} = require('../db/models');
+const {Dog, Location} = require('../db/models');
 module.exports = router;
 
 // Routes go here, but they begin with router instead of app
@@ -54,6 +54,10 @@ router.get('/location/:state', async (req, res) => {
   try {
     const dogsAtState = await Dog.findAll({
       where: {LocationId: req.params.state},
+      include: {
+        model: Location,
+        where: {id: req.params.state},
+      },
     });
     res.json(dogsAtState);
   } catch (error) {
@@ -64,7 +68,10 @@ router.get('/location/:state', async (req, res) => {
 // read single dog
 router.get('/:id', async (req, res) => {
   try {
-    const dog = await Dog.findByPk(req.params.id);
+    const dog = await Dog.findOne({
+      where: {id: req.params.id},
+      include: Location,
+    });
     res.json(dog);
   } catch (error) {
     res.sendStatus(500);
