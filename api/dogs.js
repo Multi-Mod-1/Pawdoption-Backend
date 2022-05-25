@@ -1,12 +1,30 @@
 const express = require('express');
 const router = express.Router();
+const expressJwt = require('express-jwt');
+const jwks = require('jwks-rsa');
+require('dotenv').config();
 
-const cors = require('cors');
-const bcrypt = require('bcrypt');
+// const cors = require('cors');
+// const bcrypt = require('bcrypt');
 
 // These get imported from the index.js file in the models folder
 const {Dog, Location} = require('../db/models');
 module.exports = router;
+
+
+// This const and axios call is how to use the JWT as a third party dev
+const securedRoute = expressJwt({
+  secret: jwks.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: process.env.JWKS_URI,
+  }),
+  audience: process.env.AUDIENCE,
+  issuer: process.env.ISSUER,
+  algorithms: ['RS256'],
+});
+
 
 // Routes go here, but they begin with router instead of app
 // e.g. router.get, router.post etc
@@ -95,7 +113,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete dog or change dog to adopted
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', securedRoute, async (req, res) => {
   try {
     const dog = await Dog.findByPk(req.params.id);
     await dog.destroy();

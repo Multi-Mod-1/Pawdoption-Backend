@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const expressJwt = require('express-jwt');
+const jwks = require('jwks-rsa');
+require('dotenv').config();
 
 const cors = require('cors');
 const bcrypt = require('bcrypt');
@@ -7,6 +10,18 @@ const bcrypt = require('bcrypt');
 // These get imported from the index.js file in the models folder
 const {User} = require('../db/models');
 module.exports = router;
+
+const securedRoute = expressJwt({
+  secret: jwks.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: process.env.JWKS_URI,
+  }),
+  audience: process.env.AUDIENCE,
+  issuer: process.env.ISSUER,
+  algorithms: ['RS256'],
+});
 
 // Routes go here, but they begin with router instead of app
 // e.g. router.get, router.post etc
@@ -73,7 +88,7 @@ router.put('/:userId', async (req, res) => {
 });
 
 // DELETE USER INFORMATION
-router.delete('/:userId', async (req, res, next) => {
+router.delete('/:userId', securedRoute, async (req, res, next) => {
   try {
     const userId = req.params.userId;
     await User.destroy({
