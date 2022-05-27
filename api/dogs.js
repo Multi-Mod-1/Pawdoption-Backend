@@ -8,7 +8,7 @@ require('dotenv').config();
 // const bcrypt = require('bcrypt');
 
 // These get imported from the index.js file in the models folder
-const {Dog, Location} = require('../db/models');
+const {Dog, Location, User} = require('../db/models');
 module.exports = router;
 
 
@@ -88,7 +88,9 @@ router.get('/:id', async (req, res) => {
   try {
     const dog = await Dog.findOne({
       where: {id: req.params.id},
-      include: Location,
+      include: [{
+        model: User},
+      {model: Location}],
     });
     res.json(dog);
   } catch (error) {

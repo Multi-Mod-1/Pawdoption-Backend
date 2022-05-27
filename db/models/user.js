@@ -8,9 +8,7 @@ User.init(
     {
       firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
-      location: DataTypes.STRING,
-      password: DataTypes.STRING,
-      username: {
+      email: {
         type: DataTypes.STRING,
         unique: true,
       },
