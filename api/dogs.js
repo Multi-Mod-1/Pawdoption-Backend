@@ -34,24 +34,31 @@ const securedRoute = expressJwt({
 
 // Add a new dog
 router.post('/', async (req, res) => {
+  // console.log('hit the post!');
+  // try {
+  //   const name = req.body.name;
+  //   const sex = req.body.sex;
+  //   const age = req.body.age;
+  //   const breed = req.body.breed;
+  //   const imageURL = req.body.imageURL;
+
+  //   const newDog = await Dog.create({
+  //     name: name,
+  //     sex: sex,
+  //     age: age,
+  //     breed: breed,
+  //     summary: req.body.summary,
+  //     description: req.body.description,
+  //     imageURL: imageURL,
+  //   });
+
+  //   res.json(newDog);
+  // } catch (error) {
+  //   res.sendStatus(500);
+  // }
   try {
-    const name = req.body.name;
-    const sex = req.body.sex;
-    const age = req.body.age;
-    const breed = req.body.breed;
-    const imageURL = req.body.imageURL;
-
-    const newDog = await Dog.create({
-      name: name,
-      sex: sex,
-      age: age,
-      breed: breed,
-      summary: req.body.summary,
-      description: req.body.description,
-      imageURL: imageURL,
-    });
-
-    res.json(newDog);
+    const newDog = await Dog.create(req.body);
+    res.json({newDog});
   } catch (error) {
     res.sendStatus(500);
   }

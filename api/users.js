@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const expressJwt = require('express-jwt');
 const jwks = require('jwks-rsa');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 require('dotenv').config();
 
 const cors = require('cors');
@@ -45,12 +47,25 @@ router.get('/', async (req, res) => {
 });
 
 // GET SPECIFIC USERS
-router.get('/:userId', async (req, res) => {
+// router.get('/:userId', async (req, res) => {
+//   try {
+//     const user = await User.findByPk(req.params.userId);
+//     res.send(user);
+//   } catch (error) {
+//     res.sendStatus(500);
+//   }
+// });
+
+router.get('/:userEmail', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.userId);
+    const user = await User.findOne({
+      where: {email: {[Op.like]: req.params.userEmail}},
+    });
     res.send(user);
+    // console.log(user);
   } catch (error) {
     res.sendStatus(500);
+    res.send(error);
   }
 });
 
