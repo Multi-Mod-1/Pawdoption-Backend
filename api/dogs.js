@@ -53,9 +53,15 @@ router.get('/', async (req, res) => {
     if(LocationId) query.LocationId = LocationId;
     if(UserId) query.UserId = UserId;
 
+    
     //if there were query parameters, findAll with "where" option
-    if(Object.keys(query).length > 0)
-    const allDogs = await Dog.findAll();
+    if(Object.keys(query).length > 0) {
+      const allDogs = await Dog.findAll({
+        where: query
+      })
+    } else {
+      const allDogs = await Dog.findAll();
+    }
     res.json(allDogs);
   } catch (error) {
     res.sendStatus(500);
