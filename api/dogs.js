@@ -42,6 +42,19 @@ router.post('/', async (req, res) => {
 // read all dogs
 router.get('/', async (req, res) => {
   try {
+    const query = {};
+    const {name, sex, age, breed, LocationId, UserId} = req.query;
+    //TODO: need to filter query to make sure values are valid
+    //look into https://www.youtube.com/watch?v=IPC-jZbafOk (specifically the "Sequelize.Op" stuff)
+    if(name) query.name = name;
+    if(sex) query.sex = sex;
+    if(age) query.age = age;
+    if(breed) query.breed = breed;
+    if(LocationId) query.LocationId = LocationId;
+    if(UserId) query.UserId = UserId;
+
+    //if there were query parameters, findAll with "where" option
+    if(Object.keys(query).length > 0)
     const allDogs = await Dog.findAll();
     res.json(allDogs);
   } catch (error) {
