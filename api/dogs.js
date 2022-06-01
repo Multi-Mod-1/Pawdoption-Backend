@@ -126,7 +126,7 @@ router.delete('/:id', securedRoute, async (req, res) => {
   try {
     const dog = await Dog.findByPk(req.params.id);
     await dog.destroy();
-    res.send('Dog has been removed from database');
+    res.send({msg: 'Dog has been removed from database', dog: req.params.id});
   } catch (error) {
     res.sendStatus(500);
   }
