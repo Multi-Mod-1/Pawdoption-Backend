@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 const express = require('express');
 const router = express.Router();
 const expressJwt = require('express-jwt');
@@ -120,30 +121,30 @@ router.delete('/:id', securedRoute, async (req, res) => {
 });
 
 
-//Some Helper Methods
+// Some Helper Methods
 
-function extractQueryInfo(resQuery){
+function extractQueryInfo(resQuery) {
   const query = {};
   const {name, sex, age, breed, LocationId, UserId} = resQuery;
-  //TODO: need to filter query to make sure values are valid
-  //look into https://www.youtube.com/watch?v=IPC-jZbafOk (specifically the "Sequelize.Op" stuff)
-  if(name) query.name = name;
-  if(sex) query.sex = sex;
-  if(age) query.age = age;
-  if(breed) query.breed = breed;
-  if(LocationId) query.LocationId = LocationId;
-  if(UserId) query.UserId = UserId;
+  // TODO: need to filter query to make sure values are valid
+  // look into https://www.youtube.com/watch?v=IPC-jZbafOk (specifically the "Sequelize.Op" stuff)
+  if (name) query.name = name;
+  if (sex) query.sex = sex;
+  if (age) query.age = age;
+  if (breed) query.breed = breed;
+  if (LocationId) query.LocationId = LocationId;
+  if (UserId) query.UserId = UserId;
 
   return query;
 }
 
-async function findAllDogsWithQuery(query){
-  if(Object.keys(query).length > 0) {
+async function findAllDogsWithQuery(query) {
+  if (Object.keys(query).length > 0) {
     return await Dog.findAll({
-      where: query
+      where: query,
     });
   }
-  
+
   return await Dog.findAll();
 }
 
