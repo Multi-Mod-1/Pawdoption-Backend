@@ -19,6 +19,7 @@ Dog.init({
     defaultValue: 'No description added',
     allowNull: true,
   },
+  // change this to blob for file uploading...
   imageURL: DataTypes.STRING,
 }, {
   sequelize: db,
