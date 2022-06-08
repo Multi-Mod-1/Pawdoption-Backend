@@ -5,13 +5,9 @@ const expressJwt = require('express-jwt');
 const jwks = require('jwks-rsa');
 require('dotenv').config();
 
-// const cors = require('cors');
-// const bcrypt = require('bcrypt');
-
 // These get imported from the index.js file in the models folder
 const {Dog, Location, User} = require('../db/models');
 module.exports = router;
-
 
 // This const and axios call is how to use the JWT as a third party dev
 const securedRoute = expressJwt({
@@ -35,28 +31,6 @@ const securedRoute = expressJwt({
 
 // Add a new dog
 router.post('/', async (req, res) => {
-  // console.log('hit the post!');
-  // try {
-  //   const name = req.body.name;
-  //   const sex = req.body.sex;
-  //   const age = req.body.age;
-  //   const breed = req.body.breed;
-  //   const imageURL = req.body.imageURL;
-
-  //   const newDog = await Dog.create({
-  //     name: name,
-  //     sex: sex,
-  //     age: age,
-  //     breed: breed,
-  //     summary: req.body.summary,
-  //     description: req.body.description,
-  //     imageURL: imageURL,
-  //   });
-
-  //   res.json(newDog);
-  // } catch (error) {
-  //   res.sendStatus(500);
-  // }
   try {
     const newDog = await Dog.create(req.body);
     res.json({newDog});
