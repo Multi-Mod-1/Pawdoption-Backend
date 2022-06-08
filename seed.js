@@ -26,8 +26,8 @@ const seed = async () => {
   const {dogs} = JSON.parse(String(dogBuffer));
 
   // will create each row for our User and Show Table
-  const userPromises = users.map((user) => User.create(user));
   const locationPromises = locations.map((location) => Location.create(location));
+  const userPromises = users.map((user) => User.create(user));
   const dogPromises = dogs.map((dog) => Dog.create(dog));
 
   await Promise.all([...userPromises, ...dogPromises, ...locationPromises]);

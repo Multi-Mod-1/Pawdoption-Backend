@@ -1,5 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const expressJwt = require('express-jwt');
+const jwks = require('jwks-rsa');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+require('dotenv').config();
 
 const cors = require('cors');
 const bcrypt = require('bcrypt');
@@ -7,6 +12,18 @@ const bcrypt = require('bcrypt');
 // These get imported from the index.js file in the models folder
 const {User} = require('../db/models');
 module.exports = router;
+
+const securedRoute = expressJwt({
+  secret: jwks.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: process.env.JWKS_URI,
+  }),
+  audience: process.env.AUDIENCE,
+  issuer: process.env.ISSUER,
+  algorithms: ['RS256'],
+});
 
 // Routes go here, but they begin with router instead of app
 // e.g. router.get, router.post etc
@@ -29,13 +46,17 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET SPECIFIC USERS
-router.get('/:userId', async (req, res) => {
+// GET Single user by email
+router.get('/:userEmail', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.userId);
+    const user = await User.findOne({
+      where: {email: {[Op.like]: req.params.userEmail}},
+    });
     res.send(user);
+    // console.log(user);
   } catch (error) {
     res.sendStatus(500);
+    res.send(error);
   }
 });
 
@@ -73,7 +94,7 @@ router.put('/:userId', async (req, res) => {
 });
 
 // DELETE USER INFORMATION
-router.delete('/:userId', async (req, res, next) => {
+router.delete('/:userId', securedRoute, async (req, res, next) => {
   try {
     const userId = req.params.userId;
     await User.destroy({
