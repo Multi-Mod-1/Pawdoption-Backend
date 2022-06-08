@@ -46,16 +46,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET SPECIFIC USERS
-// router.get('/:userId', async (req, res) => {
-//   try {
-//     const user = await User.findByPk(req.params.userId);
-//     res.send(user);
-//   } catch (error) {
-//     res.sendStatus(500);
-//   }
-// });
-
+// GET Single user by email
 router.get('/:userEmail', async (req, res) => {
   try {
     const user = await User.findOne({

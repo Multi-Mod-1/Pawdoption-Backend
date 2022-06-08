@@ -4,22 +4,6 @@ const request = require('request');
 
 module.exports = router;
 
-
-// const axios = require('axios');
-// const allDogs = {
-//   method: 'GET',
-//   url: 'http://localhost:3000/api/dogs/1',
-//   headers: {'authorization': `Bearer ${process.env.BEARER}`},
-// };
-
-// axios(allDogs)
-//     .then((response) => {
-//       console.log(response.data);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-
 router.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
