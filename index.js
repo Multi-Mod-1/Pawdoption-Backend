@@ -45,7 +45,7 @@ const createApp = () => {
 
 // start listening (and create a 'server' object representing our server)
 const startListening = () => {
-  const server = app.listen(PORT, () =>
+  const server = app.listen(process.env.PORT || PORT, () =>
     console.log(`Mixing it up on port ${PORT}`),
   );
 };
