@@ -16,6 +16,25 @@ module.exports = router;
 
 // Add a new dog
 router.post('/', async (req, res) => {
+
+  if (
+    !req.body.name ||
+    !req.body.sex ||
+    !req.body.age ||
+    !req.body.breed ||
+    !req.body.imageURL
+  ) {
+    res
+      .status(400)
+      .send({
+        status: "FAILED",
+        data: {
+          error: "One of the following values is missing or is empty in the request body: 'name', 'sex', 'age', 'breed', 'imageURL'" 
+        }
+      })
+    return;
+  }
+
   try {
     const name = req.body.name;
     const sex = req.body.sex;
@@ -32,8 +51,7 @@ router.post('/', async (req, res) => {
       description: req.body.description,
       imageURL: imageURL,
     });
-
-    res.json(newDog);
+    res.status(201).send({ status: "OK", data: newDog});
   } catch (error) {
     res.sendStatus(500);
   }
@@ -43,9 +61,13 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
   try {
     const allDogs = await Dog.findAll();
-    res.json(allDogs);
+    res.send({ status: "OK", data: allDogs });
+    // res.json(allDogs);
   } catch (error) {
-    res.sendStatus(500);
+    // res.sendStatus(500);
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
   }
 });
 
