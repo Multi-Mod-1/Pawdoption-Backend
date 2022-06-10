@@ -1,8 +1,15 @@
+/* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const fs = require('fs');
+const utils = require('util');
+const unlinkFile = utils.promisify(fs.unlink);
 const expressJwt = require('express-jwt');
 const jwks = require('jwks-rsa');
+const {uploadFile, getFileStream} = require('../s3');
+
 require('dotenv').config();
 
 // These get imported from the index.js file in the models folder
@@ -28,6 +35,40 @@ const securedRoute = expressJwt({
 // also the routes in this file already begins with dogs
 // e.g. router.get("/") == router.get("/dogs")
 // write it like this ^
+
+// Add image
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, './uploads');
+  },
+  filename: function(req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+const upload = multer({
+  storage: storage,
+});
+
+router.get('/images/:imageKey', (req, res) => {
+  const key = req.params.imageKey;
+  const readSt = getFileStream(key);
+
+  readSt.pipe(res);
+});
+
+router.post('/images', upload.single('file'), async (req, res) => {
+  // the file is uploaded when this route is called with formdata.
+  // now you can store the file name in the db if you want for further reference.
+  const file = req.file;
+  // console.log(file);
+  const result = await uploadFile(file);
+  await unlinkFile(file.path);
+  // console.log(result);
+  // const filename = req.file.filename;
+  // const path = req.file.path;
+  // Call your database method here with filename and path
+  res.send({imagePath: `/images/${result.Key}`});
+});
 
 // Add a new dog
 router.post('/', async (req, res) => {

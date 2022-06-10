@@ -11,6 +11,18 @@
       "lastName": "Garcia",
       "email": "CJGarciaMusic@gmail.com",
       "LocationId": 10
+    },
+    {
+      "firstName": "Eric",
+      "lastName": "Davenport, Jr.",
+      "email": "ericdavenport@pursuit.org",
+      "LocationId": 32
+    },
+    {
+      "firstName": "Lucas",
+      "lastName": "Freitas",
+      "email": "lucasfreitas0101@gmail.com",
+      "LocationId": 32
     }
   ]
 }
