@@ -24,6 +24,7 @@ router.get('/token', async (req, res) => {
   });
 });
 
+// comment
 // These already begin the routes so in dog and user files you don't need to begin with /users for example
 router.use('/users', require('./users'));
 router.use('/dogs', require('./dogs'));
