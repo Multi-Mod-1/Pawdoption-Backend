@@ -157,11 +157,11 @@ async function findAllDogsWithQuery(query) {
   if (Object.keys(query).length > 0) {
     return await Dog.findAll({
       where: query,
-      include: Location
+      include: Location,
     });
   }
-  
+
   return await Dog.findAll({
-    include: Location
+    include: Location,
   });
 }
