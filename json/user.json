@@ -1,18 +1,16 @@
 {
   "users": [
     {
-      "firstName": "Don",
-      "lastName": "Julio",
-      "location": "Mars",
-      "password": "To the moon",
-      "username": "turtles"
+      "firstName": "Javier",
+      "lastName": "Montero",
+      "email": "JavierMontero@gmail.com",
+      "LocationId": 32
     },
     {
-      "firstName": "Luffy",
-      "lastName": "Monkey",
-      "location": "Laugh Tales",
-      "password": "King of Pirates",
-      "username": "Ace"
+      "firstName": "CJ",
+      "lastName": "Garcia",
+      "email": "CJGarciaMusic@gmail.com",
+      "LocationId": 10
     }
   ]
 }

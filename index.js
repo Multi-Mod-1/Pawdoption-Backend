@@ -1,8 +1,12 @@
+/* eslint-disable require-jsdoc */
 const path = require('path');
 const express = require('express');
+require('dotenv').config();
+
 const PORT = 3000;
 const app = express();
 module.exports = app;
+
 
 const createApp = () => {
   // body parsing middleware
@@ -41,7 +45,7 @@ const createApp = () => {
 
 // start listening (and create a 'server' object representing our server)
 const startListening = () => {
-  const server = app.listen(PORT, () =>
+  const server = app.listen(process.env.PORT || PORT, () =>
     console.log(`Mixing it up on port ${PORT}`),
   );
 };
