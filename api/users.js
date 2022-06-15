@@ -46,8 +46,20 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET Single user by id
+router.get('/:userId', async (req, res) => {
+  try {
+    const user = await User.findByPk(req.params.userId);
+    res.send(user);
+    // console.log(user);
+  } catch (error) {
+    res.sendStatus(500);
+    res.send(error);
+  }
+});
+
 // GET Single user by email
-router.get('/:userEmail', async (req, res) => {
+router.get('/email/:userEmail', async (req, res) => {
   try {
     const user = await User.findOne({
       where: {email: {[Op.like]: req.params.userEmail}},
@@ -70,9 +82,9 @@ router.post('/', async (req, res) => {
       const newUser = await User.create({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        location: req.body.location,
-        password: encrypted,
-        username: req.body.username,
+        email: req.body.email,
+        // LocationId: req.body.LocationId,
+        // password: encrypted,
       });
       res.json({newUser});
     } catch (error) {
