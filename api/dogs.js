@@ -72,9 +72,29 @@ router.post('/images', upload.single('file'), async (req, res) => {
 
 // Add a new dog
 router.post('/', async (req, res) => {
+
+  if (
+    !req.body.name ||
+    !req.body.sex ||
+    !req.body.age ||
+    !req.body.breed ||
+    !req.body.imageURL
+  ) {
+    res
+      .status(400)
+      .send({
+        status: "FAILED",
+        data: {
+          error: "One of the following values is missing or is empty in the request body: 'name', 'sex', 'age', 'breed', 'imageURL'" 
+        }
+      })
+    return;
+  }
+
   try {
     const newDog = await Dog.create(req.body);
     res.json({newDog});
+    res.status(201).send({ status: "OK", data: newDog});
   } catch (error) {
     res.sendStatus(500);
   }
@@ -89,7 +109,10 @@ router.get('/', async (req, res) => {
     res.json(allDogs);
   } catch (error) {
     console.log(error);
-    res.sendStatus(500);
+    // res.sendStatus(500);
+    res
+    .status(error?.status || 500)
+    .send({ status: "FAILED", data: { error: error?.message || error } });
   }
 });
 
