@@ -42,7 +42,26 @@ router.get('/:userId', async (req, res) => {
 // POST NEW USER
 // Using bcrypt encryption
 router.post('/', async (req, res) => {
-  bcrypt.hash(req.body.password, 2, async function(error, encrypted) {
+  if (
+      !req.body.firstName ||
+      !req.body.lastName ||
+      !req.body.location ||
+      !req.body.password ||
+      !req.body.username
+   ) {
+      res
+      .status(400)
+      .send({
+        status: "FAILED",
+        data: {
+          error: "One of the following values is missing or is empty in the request body: 'firstName', 'lastName', 'location', 'password', 'username'" 
+        }
+      })
+    return;
+    }
+
+    bcrypt.hash(req.body.password, 2, async function(error, encrypted) {
+
     try {
       if (error) throw error;
       // Create a new user, storing the hashed password
@@ -53,9 +72,11 @@ router.post('/', async (req, res) => {
         password: encrypted,
         username: req.body.username,
       });
-      res.json({newUser});
+      res.status(201).json({newUser});
     } catch (error) {
-      res.send(error);
+      res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
     }
   });
 });
@@ -68,7 +89,9 @@ router.put('/:userId', async (req, res) => {
     });
     res.json({updatedUser});
   } catch (error) {
-    res.sendStatus(500);
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
   }
 });
 

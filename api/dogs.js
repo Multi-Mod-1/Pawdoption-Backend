@@ -51,9 +51,11 @@ router.post('/', async (req, res) => {
       description: req.body.description,
       imageURL: imageURL,
     });
-    res.status(201).send({ status: "OK", data: newDog});
+    res.status(201).send({ newDog });
   } catch (error) {
-    res.sendStatus(500);
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
   }
 });
 
@@ -61,8 +63,8 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
   try {
     const allDogs = await Dog.findAll();
-    res.send({ status: "OK", data: allDogs });
-    // res.json(allDogs);
+    res.status(200).send(allDogs);
+    // res.json(allDogs)
   } catch (error) {
     // res.sendStatus(500);
     res
@@ -81,22 +83,38 @@ router.get('/location/:state', async (req, res) => {
         where: {id: req.params.state},
       },
     });
-    res.json(dogsAtState);
+    res.status(200).send(dogsAtState);
+    // res.json(dogsAtState);
   } catch (error) {
-    res.sendStatus(500);
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
   }
 });
 
 // read single dog
 router.get('/:id', async (req, res) => {
+  if ( !req.params.id ) { 
+    res
+      .status(400)
+      .send({
+        status: "FAILED",
+        data: {
+          error: "Missing id parameter" 
+        }
+      })
+    return;
+  }
   try {
     const dog = await Dog.findOne({
       where: {id: req.params.id},
       include: Location,
     });
-    res.json(dog);
+    res.status(200).json(dog);
   } catch (error) {
-    res.sendStatus(500);
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
   }
 });
 
@@ -110,9 +128,11 @@ router.put('/:id', async (req, res) => {
     const dog = Dog.update(updatedInfo, {
       where: {id: id},
     });
-    res.json(dog);
+    res.status(202).json(dog);
   } catch (error) {
-    res.sendStatus(500);
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
   }
 });
 
@@ -121,8 +141,10 @@ router.delete('/:id', async (req, res) => {
   try {
     const dog = await Dog.findByPk(req.params.id);
     await dog.destroy();
-    res.send('Dog has been removed from database');
+    res.status(204).send('Dog has been removed from database');
   } catch (error) {
-    res.sendStatus(500);
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
   }
 });
