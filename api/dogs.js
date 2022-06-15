@@ -98,8 +98,6 @@ router.delete('/:id', async (req, res) => {
 function extractQueryInfo(resQuery){
   const query = {};
   const {name, sex, age, breed, LocationId, UserId} = resQuery;
-  //TODO: need to filter query to make sure values are valid
-  //look into https://www.youtube.com/watch?v=IPC-jZbafOk (specifically the "Sequelize.Op" stuff)
   if(name) query.name = name;
   if(sex) query.sex = sex;
   if(age) query.age = age;
@@ -113,10 +111,13 @@ function extractQueryInfo(resQuery){
 async function findAllDogsWithQuery(query){
   if(Object.keys(query).length > 0) {
     return await Dog.findAll({
-      where: query
+      where: query,
+      include: Location
     });
   }
   
-  return await Dog.findAll();
+  return await Dog.findAll({
+    include: Location
+  });
 }
 
